@@ -1,0 +1,42 @@
+{
+  "name": "node_tdd",
+  "version": "1.0.0",
+  "description": "",
+  "main": "app.js",
+  "scripts": {
+    "start": "nodemon app.js",
+    "test": "jest --watch",
+    "lint": "eslint . --fix",
+    "start:deploy": "node app.js"
+  },
+  "author": "ayaf",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.18.1"
+  },
+  "devDependencies": {
+    "eslint": "^8.17.0",
+    "jest": "^28.1.1",
+    "supertest": "^6.2.3"
+  },
+  "eslintConfig": {
+    "parserOptions": {
+      "ecmaVersion": 6
+    },
+    "extends":[
+      "eslint:recommended"
+    ],
+    "env": {
+      "node": true,
+      "es6": true,
+      "jest": true
+    },
+    "rules": {
+      "semi": "warn",
+      "quotes": ["warn", "double"]
+    }
+  },
+  "prettier": {
+    "singleQuote": false
+  }
+}
