@@ -1,13 +1,16 @@
 const request = require("supertest");
-const app = require("../app.js");
+const app = require("../app");
 
-it("returns 200 when signup is valid", () => {
+it("returns 200 when signup is valid", (done) => {
   request(app)
-    .post("api/v1/users")
+    .post("/api/1.0/users")
     .send({
       username: "user1",
       email: "email@gmail.com",
       password: "1122",
     })
-    .expect(200);
+    .then((res) => {
+      expect(res.status).toBe(200);
+      done();
+    });
 });
