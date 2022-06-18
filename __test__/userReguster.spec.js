@@ -29,4 +29,18 @@ describe("user registration", () => {
         done();
       });
   });
+
+  it("saves the user to the database", (done) => {
+    request(app)
+      .post("/api/1.0/users")
+      .send({
+        username: "user1",
+        email: "test@gmail.com",
+        password: "1122",
+      })
+      .then(() => {
+        // Query the user Table
+        done();
+      });
+  });
 });

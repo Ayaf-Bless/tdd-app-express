@@ -12,7 +12,9 @@
   "author": "ayaf",
   "license": "ISC",
   "dependencies": {
-    "express": "^4.18.1"
+    "express": "^4.18.1",
+    "sequelize": "^6.20.1",
+    "sqlite3": "^5.0.8"
   },
   "devDependencies": {
     "eslint": "^8.17.0",
@@ -23,7 +25,7 @@
     "parserOptions": {
       "ecmaVersion": 6
     },
-    "extends":[
+    "extends": [
       "eslint:recommended"
     ],
     "env": {
@@ -33,7 +35,10 @@
     },
     "rules": {
       "semi": "warn",
-      "quotes": ["warn", "double"]
+      "quotes": [
+        "warn",
+        "double"
+      ]
     }
   },
   "prettier": {
