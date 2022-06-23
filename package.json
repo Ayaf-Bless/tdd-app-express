@@ -12,6 +12,7 @@
   "author": "ayaf",
   "license": "ISC",
   "dependencies": {
+    "bcrypt": "^5.0.1",
     "express": "^4.18.1",
     "sequelize": "^6.20.1",
     "sqlite3": "^5.0.8"
@@ -23,7 +24,7 @@
   },
   "eslintConfig": {
     "parserOptions": {
-      "ecmaVersion": 6
+      "ecmaVersion": 2018
     },
     "extends": [
       "eslint:recommended"
