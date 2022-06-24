@@ -1,21 +1,10 @@
 const express = require("express");
-const User = require("./user/User");
-const bcrypt = require("bcrypt");
+const userRouter = require("./user/userRouter");
 
 const app = express();
 
 app.use(express.json());
 
-app.post("/api/1.0/users", (req, res) => {
-  bcrypt.hash(req.body.password, 10).then((hash) => {
-    const user = {
-      ...req.body,
-      password: hash,
-    };
-    User.create(user).then(() => {
-      return res.status(200).send({ message: "User created" });
-    });
-  });
-});
+app.use("/api/1.0/users", userRouter);
 
 module.exports = app;
