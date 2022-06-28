@@ -4,8 +4,8 @@
   "description": "",
   "main": "app.js",
   "scripts": {
-    "start": "nodemon index",
-    "test": "jest --watch",
+    "start": "cross-env NODE_ENV=dev nodemon index",
+    "test": "cross-env NODE_ENV=test jest --watch",
     "lint": "eslint . --fix",
     "start:deploy": "node app.js"
   },
@@ -13,11 +13,13 @@
   "license": "ISC",
   "dependencies": {
     "bcrypt": "^5.0.1",
+    "config": "^3.3.7",
     "express": "^4.18.1",
     "sequelize": "^6.20.1",
     "sqlite3": "^5.0.8"
   },
   "devDependencies": {
+    "cross-env": "^7.0.3",
     "eslint": "^8.17.0",
     "jest": "^28.1.1",
     "supertest": "^6.2.3"

@@ -1,10 +1,17 @@
 const Sequilize = require("sequelize");
-const path = require("path");
+const config = require("config");
 
-const sequilize = new Sequilize("hoaxify", "ayaf", "1122", {
-  dialect: "sqlite",
-  storage: path.join(__dirname, "..", "database.sqlite"),
-  logging: false,
-});
+const database = config.get("database");
+
+const sequilize = new Sequilize(
+  database.name,
+  database.username,
+  database.password,
+  {
+    dialect: database.dialect,
+    storage: database.storage,
+    logging: database.logging,
+  }
+);
 
 module.exports = sequilize;
