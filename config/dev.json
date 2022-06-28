@@ -5,6 +5,6 @@
         "password": "1122",
         "dialect": "sqlite",
         "storage": "./database.sqlite",
-        "logging": true
+        "logging": false
     }
 }
